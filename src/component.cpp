@@ -27,6 +27,11 @@ void component::sendmessage(message msg)
 	mhost->pumpmessage(msg);
 }
 
+void component::buildentity(message msg)
+{
+	mhost->buildentity(msg);
+}
+
 void component::killhost()
 {
 	mhost->die();

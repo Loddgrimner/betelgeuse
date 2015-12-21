@@ -1,5 +1,6 @@
 #define _XOPEN_SOURCE_EXTENDED
 
+#include <stdlib.h>
 #include <ncurses.h>
 #include <locale.h>
 #include <iostream>
@@ -16,17 +17,21 @@ int main()
 	mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
 	noecho();
 	curs_set(0);
-	timeout(1);
+	timeout(100);
 	
 	game test;
 
-	message msg;
-
-	test.buildentity(msg);
-
 	while(int c = getch() != 'q')
 	{
-		test.buildentity(msg);
+		if(rand()%10 == 0)
+		{
+			message msg;
+			msg.set("dumbmover",1);
+			msg.set("lifetimer",1);
+			msg.set("pointdraw",1);
+			msg.set("spawner",1);
+			test.buildentity(msg);
+		}
 		//clear();
 		erase();
 		test.update();

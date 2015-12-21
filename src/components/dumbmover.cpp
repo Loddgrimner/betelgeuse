@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <ncurses.h>
 #include "dumbmover.h"
 
 dumbmover::dumbmover()
@@ -12,10 +11,17 @@ dumbmover::~dumbmover()
 }
 void dumbmover::update()
 {
-	x+=dx;
-	y+=dy;
-	mvprintw(x,y,"@");
+	message msg;
+	msg.set("changeposition",1);
+	msg.set("x",x+dx);
+	msg.set("y",y+dy);
+	sendmessage(msg);
 }
 void dumbmover::receivemessage(message msg)
 {
+	if(msg.get("changeposition"))
+	{
+		x = msg.get("x");
+		y = msg.get("y");
+	}
 }

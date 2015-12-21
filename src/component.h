@@ -17,6 +17,7 @@ public:
 
 protected:
 	void sendmessage(message msg);
+	void buildentity(message msg);
 	void killhost();
 
 private:

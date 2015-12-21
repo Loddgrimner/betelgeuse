@@ -25,4 +25,5 @@ void game::update()
 void game::buildentity(message msg)
 {
 	builtentities.push_back(mentitybuilder->build(msg));
+	builtentities.back()->setgame(this);
 }

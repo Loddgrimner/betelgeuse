@@ -18,6 +18,11 @@ void entity::pumpmessage(message msg)
 	}
 }
 
+void entity::buildentity(message msg)
+{
+	mgame->buildentity(msg);	
+}
+
 void entity::update()
 {
 	for (auto& i : components) {
@@ -39,4 +44,9 @@ void entity::insertcomponent(std::shared_ptr<component> c)
 {
 	c->sethost(this);
 	components.push_back(c);
+}
+
+void entity::setgame(game* pgame)
+{
+	mgame = pgame;
 }

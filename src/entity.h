@@ -14,10 +14,12 @@ public:
 	entity ();
 	~entity ();
 	void pumpmessage(message msg);
+	void buildentity(message msg);
 	void update();
 	bool isdead() const;
 	void die();
 	void insertcomponent(std::shared_ptr<component>);
+	void setgame(game* pgame);
 
 private:
 	std::vector<std::shared_ptr<component>> components;
