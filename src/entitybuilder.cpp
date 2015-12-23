@@ -3,6 +3,7 @@
 #include "lifetimer.h"
 #include "pointdraw.h"
 #include "spawner.h"
+#include "trail.h"
 
 entitybuilder::entitybuilder()
 {
@@ -22,13 +23,17 @@ std::shared_ptr<entity> entitybuilder::build(message msg)
 	{
 		e->insertcomponent(std::make_shared<lifetimer>());
 	}
-	if(msg.get("pointdraw"))
-	{
-		e->insertcomponent(std::make_shared<pointdraw>());
-	}
 	if(msg.get("spawner"))
 	{
 		e->insertcomponent(std::make_shared<spawner>());
+	}
+	if(msg.get("trail"))
+	{
+		e->insertcomponent(std::make_shared<trail>());
+	}
+	if(msg.get("pointdraw"))
+	{
+		e->insertcomponent(std::make_shared<pointdraw>());
 	}
 	e->pumpmessage(msg);
 	return e; 

@@ -29,6 +29,7 @@ int main()
 			msg.set("dumbmover",1);
 			msg.set("lifetimer",1);
 			msg.set("pointdraw",1);
+			msg.set("trail",1);
 			msg.set("spawner",1);
 			test.buildentity(msg);
 		}

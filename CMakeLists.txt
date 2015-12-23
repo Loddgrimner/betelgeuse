@@ -15,11 +15,15 @@ INCLUDE_DIRECTORIES(
   include
   ${CMAKE_SOURCE_DIR}/src
   ${CMAKE_SOURCE_DIR}/src/components
+  ${CMAKE_SOURCE_DIR}/src/systems
+  ${CMAKE_SOURCE_DIR}/src/utils
 )
 
 file(GLOB target_SRC
   "${CMAKE_SOURCE_DIR}/src/*.cpp"
   "${CMAKE_SOURCE_DIR}/src/components/*.cpp"
+  "${CMAKE_SOURCE_DIR}/src/systems/*.cpp"
+  "${CMAKE_SOURCE_DIR}/src/utils/*.cpp"
 )
 
 add_executable(bin/run ${target_SRC})

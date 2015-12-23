@@ -1,11 +1,11 @@
 #pragma once
 #include "component.h"
 
-class spawner:public component
+class trail:public component
 {
 public:
-	spawner ();
-	virtual ~spawner ();
+	trail ();
+	virtual ~trail ();
 	
 	void receivemessage(message msg);
 	void update();
@@ -13,5 +13,4 @@ public:
 private:
 	int x;
 	int y;
-	int spawntimer = 9;
 };
