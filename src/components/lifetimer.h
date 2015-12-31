@@ -12,5 +12,5 @@ public:
 
 private:
 	int time = 0;
-	int killtime = 10;
+	int killtime = 100;
 };

@@ -13,5 +13,5 @@ public:
 private:
 	int x;
 	int y;
-	int spawntimer = 9;
+	int spawntimer = 99;
 };

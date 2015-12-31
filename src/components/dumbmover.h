@@ -1,5 +1,7 @@
 #pragma once
 #include "component.h"
+#include "ivec2.h"
+#include "path.h"
 
 class dumbmover:public component
 {
@@ -11,9 +13,9 @@ public:
 	void update();
 
 private:
-	int x = 20;
-	int y = 20;
-	int dx = 0;
-	int dy = 0;
-	/* data */
+	ivec2 position;
+	ivec2 delta;
+	path movepath;
+	int speed;
+	int movepoints;
 };
