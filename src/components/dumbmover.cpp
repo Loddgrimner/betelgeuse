@@ -22,8 +22,7 @@ void dumbmover::update()
 	}
 
 	if(movepath.getsize() != 0)
-	position = movepath.getcurrent();
-		{
+	{
 		movepoints += speed;
 		if(movepoints > 100)
 		{

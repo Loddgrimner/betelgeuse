@@ -18,7 +18,7 @@ void spawner::update()
 			msg.set("dumbmover",1);
 			msg.set("lifetimer",1);
 			msg.set("pointdraw",1);
-			//msg.set("trail",1);
+			msg.set("trail",1);
 			msg.set("changeposition",1);
 			msg.set("x",x);
 			msg.set("y",y);

@@ -15,4 +15,9 @@ void lifetimer::update()
 }
 void lifetimer::receivemessage(message msg)
 {
+	if(msg.get("lifetime"))
+	{
+		time = 0;
+		killtime = msg.get("lifetime");
+	}
 }

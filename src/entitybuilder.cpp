@@ -2,6 +2,7 @@
 #include "dumbmover.h"
 #include "lifetimer.h"
 #include "pointdraw.h"
+#include "smoke.h"
 #include "spawner.h"
 #include "trail.h"
 
@@ -34,6 +35,10 @@ std::shared_ptr<entity> entitybuilder::build(message msg)
 	if(msg.get("pointdraw"))
 	{
 		e->insertcomponent(std::make_shared<pointdraw>());
+	}
+	if(msg.get("smoke"))
+	{
+		e->insertcomponent(std::make_shared<smoke>());
 	}
 	e->pumpmessage(msg);
 	return e; 
