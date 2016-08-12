@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include "message.h"
+#include "registry.h"
 
 class component;
 class game;
@@ -20,6 +21,7 @@ public:
 	void die();
 	void insertcomponent(std::shared_ptr<component>);
 	void setgame(game* pgame);
+	registry* getregistry();
 
 private:
 	std::vector<std::shared_ptr<component>> components;

@@ -10,7 +10,8 @@ pointdraw::~pointdraw()
 }
 void pointdraw::update()
 {
-	mvprintw(x,y,"@");
+	attron(COLOR_PAIR(1));
+	mvprintw(x,y,"F");
 }
 void pointdraw::receivemessage(message msg)
 {

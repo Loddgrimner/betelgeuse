@@ -3,6 +3,7 @@
 #include <map>
 #include <string>
 #include "message.h"
+#include "registry.h"
 
 class entity;
 
@@ -19,6 +20,7 @@ protected:
 	void sendmessage(message msg);
 	void buildentity(message msg);
 	void killhost();
+	registry* getregistry();
 
 private:
 	entity* mhost = nullptr;

@@ -50,3 +50,8 @@ void entity::setgame(game* pgame)
 {
 	mgame = pgame;
 }
+
+registry* entity::getregistry()
+{
+	return mgame->getregistry();
+}

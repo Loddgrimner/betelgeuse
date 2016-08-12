@@ -6,7 +6,7 @@ dumbmover::dumbmover()
 	delta.setx(rand()%10-5);
 	delta.sety(rand()%10-5);
 
-	speed = rand() % 50 + 1;
+	speed = 50;
 	movepoints = 0;
 
 }
@@ -34,7 +34,12 @@ void dumbmover::update()
 			msg.set("y",moveposition.gety());
 			sendmessage(msg);
 			movepath.pop_front();
+			if(getregistry()->checkposition(moveposition))
+			{
+				component::killhost();
+			}	
 		}
+		
 	}
 
 }
@@ -44,5 +49,10 @@ void dumbmover::receivemessage(message msg)
 	{
 		position.setx(msg.get("x"));
 		position.sety(msg.get("y"));
+	}
+	if(msg.get("changedelta"))
+	{
+		delta.setx(msg.get("deltax"));
+		delta.sety(msg.get("deltay"));
 	}
 }

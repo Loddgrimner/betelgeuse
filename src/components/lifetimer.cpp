@@ -10,6 +10,9 @@ void lifetimer::update()
 	time++;
 	if(time >= killtime)
 	{
+		message msg;
+		msg.set("death",1);
+		sendmessage(msg);
 		component::killhost();
 	}
 }

@@ -36,3 +36,8 @@ void component::killhost()
 {
 	mhost->die();
 }
+
+registry* component::getregistry()
+{
+	return mhost->getregistry();
+}
